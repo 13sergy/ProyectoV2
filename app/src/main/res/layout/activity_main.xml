@@ -31,45 +31,34 @@
             android:gravity="center_vertical" >
 
             <!-- CABECERA-->
-            <!--<ImageView
-                android:id="@+id/icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/ic_avatar_mini" />-->
 
-            <!-- android:layout_toRightOf="@+id/icon"-->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-
                 android:orientation="vertical" >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="YiyiGranja"
+                    android:id="@+id/nombre_granja"
+                    android:text="@string/nombre_granja"
                     android:textColor="#fff"
                     android:layout_marginLeft="10dp"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <!--<TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="PTIT HCM"
-                    android:textColor="#fff"
-                    android:textSize="16sp" />-->
+
             </LinearLayout>
         </RelativeLayout>
 
-        <!-- Navigation Listview -->
+        <!-- Navigation Listview
+            MENU LATERAL -->
 
         <ListView
             android:id="@+id/nav_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/profile_box"
             android:background="#ffffff"
             android:choiceMode="singleChoice" >

@@ -15,9 +15,9 @@ import android.widget.RelativeLayout;
 
 import com.demo.adapters.NavListAdapter;
 import com.demo.fragments.MisEntradas;
+import com.demo.fragments.MisGraficos;
 import com.demo.fragments.MisInformes;
-import com.demo.fragments.MyAbout;
-import com.demo.fragments.MySettings;
+import com.demo.fragments.MyAcercaDe;
 import com.demo.models.NavItem;
 
 import java.util.ArrayList;
@@ -78,13 +78,11 @@ public class MainActivity extends ActionBarActivity {
 				R.drawable.ic_action_home));
 		listNavEntradas.add(new NavItem("Informes", "Datos estadísticos",
 				R.drawable.ic_action_about));
-		listNavEntradas.add(new NavItem("Gráficos", "",
+		listNavEntradas.add(new NavItem("Gráficos", "Datos gráficos",
 				R.drawable.ic_action_about));
 
-		listNavEntradas.add(new NavItem("Settings", "Change something",
+		listNavEntradas.add(new NavItem("Acerca De", "Sobre el autor",
 				R.drawable.ic_action_settings));
-		listNavEntradas.add(new NavItem("About", "Author's information",
-				R.drawable.ic_action_about));
 
 		NavListAdapter navListAdapterEntradas = new NavListAdapter(
 				getApplicationContext(), R.layout.item_nav_list, listNavEntradas);
@@ -94,8 +92,8 @@ public class MainActivity extends ActionBarActivity {
 		listFragments = new ArrayList<Fragment>();
 		listFragments.add(new MisEntradas());
 		listFragments.add(new MisInformes());
-		listFragments.add(new MySettings());
-		listFragments.add(new MyAbout());
+		listFragments.add(new MisGraficos());
+		listFragments.add(new MyAcercaDe());
 
 		// load first fragment as default:
 		FragmentManager fragmentManager = getSupportFragmentManager();

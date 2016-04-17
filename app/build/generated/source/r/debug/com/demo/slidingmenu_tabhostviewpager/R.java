@@ -1312,9 +1312,8 @@ containing a value of this type.
         public static final int ic_action_about=0x7f020035;
         public static final int ic_action_home=0x7f020036;
         public static final int ic_action_settings=0x7f020037;
-        public static final int ic_avatar_mini=0x7f020038;
-        public static final int ic_launcher=0x7f020039;
-        public static final int not_activated=0x7f02003a;
+        public static final int ic_launcher=0x7f020038;
+        public static final int not_activated=0x7f020039;
     }
     public static final class id {
         public static final int action_bar=0x7f0b0031;
@@ -1330,7 +1329,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0b002e;
         public static final int action_mode_bar_stub=0x7f0b002d;
         public static final int action_mode_close_button=0x7f0b0020;
-        public static final int action_settings=0x7f0b004b;
+        public static final int action_settings=0x7f0b004a;
         public static final int activity_chooser_view_content=0x7f0b0021;
         public static final int always=0x7f0b0016;
         public static final int beginning=0x7f0b0013;
@@ -1347,7 +1346,7 @@ containing a value of this type.
         public static final int end=0x7f0b0014;
         public static final int expand_activities_button=0x7f0b0022;
         public static final int expanded_menu=0x7f0b0028;
-        public static final int hScrollView=0x7f0b0049;
+        public static final int hScrollView=0x7f0b0048;
         public static final int home=0x7f0b0004;
         public static final int homeAsUp=0x7f0b000d;
         public static final int icon=0x7f0b0026;
@@ -1357,9 +1356,10 @@ containing a value of this type.
         public static final int list_item=0x7f0b0025;
         public static final int main_content=0x7f0b0040;
         public static final int middle=0x7f0b0015;
-        public static final int nav_icon=0x7f0b0044;
-        public static final int nav_list=0x7f0b0043;
+        public static final int nav_icon=0x7f0b0046;
+        public static final int nav_list=0x7f0b0044;
         public static final int never=0x7f0b0019;
+        public static final int nombre_granja=0x7f0b0043;
         public static final int none=0x7f0b000e;
         public static final int normal=0x7f0b000a;
         public static final int profile_box=0x7f0b0042;
@@ -1382,15 +1382,13 @@ containing a value of this type.
         public static final int showTitle=0x7f0b0011;
         public static final int split_action_bar=0x7f0b0007;
         public static final int submit_area=0x7f0b003c;
-        public static final int subtitle=0x7f0b0045;
+        public static final int subtitle=0x7f0b0047;
         public static final int tabMode=0x7f0b000b;
-        public static final int textView1=0x7f0b0046;
-        public static final int textView2=0x7f0b0047;
-        public static final int textView3=0x7f0b0048;
+        public static final int textView1=0x7f0b0045;
         public static final int title=0x7f0b0027;
         public static final int up=0x7f0b0008;
         public static final int useLogo=0x7f0b0012;
-        public static final int viewPager=0x7f0b004a;
+        public static final int viewPager=0x7f0b0049;
         public static final int withText=0x7f0b001a;
         public static final int wrap_content=0x7f0b001d;
     }
@@ -1422,15 +1420,21 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
         public static final int activity_main=0x7f030017;
-        public static final int fragment_about=0x7f030018;
-        public static final int fragment_home=0x7f030019;
-        public static final int fragment_settings=0x7f03001a;
-        public static final int item_nav_list=0x7f03001b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
-        public static final int tab1fragment=0x7f03001d;
-        public static final int tab2fragment=0x7f03001e;
-        public static final int tab3fragment=0x7f03001f;
-        public static final int tabs_viewpager_layout=0x7f030020;
+        public static final int fragment_acerca_de=0x7f030018;
+        public static final int fragment_agua_layout=0x7f030019;
+        public static final int fragment_beneficios_layout=0x7f03001a;
+        public static final int fragment_estadisticas_layout=0x7f03001b;
+        public static final int fragment_gallinero_layout=0x7f03001c;
+        public static final int fragment_gastos_layout=0x7f03001d;
+        public static final int fragment_graficos=0x7f03001e;
+        public static final int fragment_huevos_layout=0x7f03001f;
+        public static final int fragment_limpieza_layout=0x7f030020;
+        public static final int fragment_mejordia_layout=0x7f030021;
+        public static final int fragment_pienso_layout=0x7f030022;
+        public static final int fragment_resumen_layout=0x7f030023;
+        public static final int item_nav_list=0x7f030024;
+        public static final int support_simple_spinner_dropdown_item=0x7f030025;
+        public static final int tabs_viewpager_layout=0x7f030026;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
@@ -1457,6 +1461,7 @@ containing a value of this type.
         public static final int drawer_closed=0x7f050012;
         public static final int drawer_opened=0x7f050013;
         public static final int hello_world=0x7f050014;
+        public static final int nombre_granja=0x7f050015;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 

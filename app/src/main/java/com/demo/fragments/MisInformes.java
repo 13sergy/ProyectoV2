@@ -14,9 +14,11 @@ import android.widget.TabHost.OnTabChangeListener;
 
 import com.demo.adapters.FakeContent;
 import com.demo.adapters.MyFragmentPagerAdapter;
-import com.demo.inner.fragments.Tab1Fragment;
-import com.demo.inner.fragments.Tab2Fragment;
-import com.demo.inner.fragments.Tab3Fragment;
+import com.demo.informes.fragments.BeneficiosFragment;
+import com.demo.informes.fragments.EstadisticasFragment;
+import com.demo.informes.fragments.GallineroFragment;
+import com.demo.informes.fragments.GastosFragment;
+import com.demo.informes.fragments.MejorDiaFragment;
 import com.demo.slidingmenu_tabhostviewpager.R;
 
 import java.util.List;
@@ -54,11 +56,11 @@ public class MisInformes extends Fragment implements OnTabChangeListener,
     private void initializeViewPager() {
         List<Fragment> fragments = new Vector<Fragment>();
 
-        fragments.add(new Tab1Fragment());
-        fragments.add(new Tab2Fragment());
-        fragments.add(new Tab3Fragment());
-        fragments.add(new Tab1Fragment());
-        fragments.add(new Tab2Fragment());
+        fragments.add(new GallineroFragment());
+        fragments.add(new GastosFragment());
+        fragments.add(new BeneficiosFragment());
+        fragments.add(new EstadisticasFragment());
+        fragments.add(new MejorDiaFragment());
 
 
         myViewPagerAdapter = new MyFragmentPagerAdapter(

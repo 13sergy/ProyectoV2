@@ -15,7 +15,7 @@ public class EstadisticasFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater,
 			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		
-		View v = inflater.inflate(R.layout.tab1fragment, container, false);
+		View v = inflater.inflate(R.layout.fragment_estadisticas_layout, container, false);
 		
 		return v;
 	}

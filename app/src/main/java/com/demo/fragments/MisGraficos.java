@@ -1,4 +1,4 @@
-package com.demo.inner.fragments;
+package com.demo.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,13 +9,14 @@ import android.view.ViewGroup;
 
 import com.demo.slidingmenu_tabhostviewpager.R;
 
-public class Tab3Fragment extends Fragment {
+public class MisGraficos extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater,
 			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+		
+		View v = inflater.inflate(R.layout.fragment_graficos, container, false);
 
-		View v = inflater.inflate(R.layout.tab3fragment, container, false);
 		return v;
 	}
 }

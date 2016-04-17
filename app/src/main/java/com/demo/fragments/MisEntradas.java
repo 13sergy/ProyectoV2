@@ -1,6 +1,5 @@
 package com.demo.fragments;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
-import android.widget.TabHost.TabContentFactory;
 
+import com.demo.adapters.FakeContent;
 import com.demo.adapters.MyFragmentPagerAdapter;
 import com.demo.inner.fragments.Tab1Fragment;
 import com.demo.inner.fragments.Tab2Fragment;
@@ -24,137 +23,110 @@ import java.util.List;
 import java.util.Vector;
 
 public class MisEntradas extends Fragment implements OnTabChangeListener,
-		OnPageChangeListener {
+        OnPageChangeListener {
 
-	private TabHost tabHost;
-	private ViewPager viewPager;
-	private MyFragmentPagerAdapter myViewPagerAdapter;
-	int i = 0;
-	View v;
+    private TabHost tabHost;
+    private ViewPager mViewPager;
+    private MyFragmentPagerAdapter myViewPagerAdapter;
+    private View mView;
+    private boolean onResume=false;
+    private HorizontalScrollView hScrollView;
 
-	@Override
-	public View onCreateView(LayoutInflater inflater,
-			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-		v = inflater.inflate(R.layout.tabs_viewpager_layout, container, false);
+    @Override
+    public View onCreateView(LayoutInflater inflater,
+                             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-		// We put TabHostView Pager here:
-		/*
-		 * part1*****************************************************************
-		 * ********  DONE! !!!!! :))
-		 */ 
+        mView = inflater.inflate(R.layout.tabs_viewpager_layout, container, false);
+        hScrollView = (HorizontalScrollView) mView
+                .findViewById(R.id.hScrollView);
+        initializeTabHost();
+        initializeViewPager();
 
-		i++;
+        return mView;
+    }
 
-		// init tabhost
-		this.initializeTabHost(savedInstanceState);
 
-		// init ViewPager
-		this.initializeViewPager();
 
-		/*
-		 * part1*****************************************************************
-		 * ********
-		 */
-		return v;
-	}
+    /**
+     * This method is used to initialize the ViewPager with different fragments.
+     */
+    private void initializeViewPager() {
+        List<Fragment> fragments = new Vector<Fragment>();
 
-	// fake content for tabhost
-	class FakeContent implements TabContentFactory {
-		private final Context mContext;
+        fragments.add(new Tab1Fragment());
+        fragments.add(new Tab2Fragment());
+        fragments.add(new Tab3Fragment());
+        fragments.add(new Tab1Fragment());
+        fragments.add(new Tab2Fragment());
 
-		public FakeContent(Context context) {
-			mContext = context;
-		}
 
-		@Override
-		public View createTabContent(String tag) {
-			View v = new View(mContext);
-			v.setMinimumHeight(0);
-			v.setMinimumWidth(0);
-			return v;
-		}
-	}
+        myViewPagerAdapter = new MyFragmentPagerAdapter(
+                getChildFragmentManager(), fragments);
+        mViewPager = (ViewPager) mView.findViewById(R.id.viewPager);
+        mViewPager.setAdapter(this.myViewPagerAdapter);
+        mViewPager.setOnPageChangeListener(this);
 
-	private void initializeViewPager() {
-		List<Fragment> fragments = new Vector<Fragment>();
+    }
 
-		fragments.add(new Tab1Fragment());
-		fragments.add(new Tab2Fragment());
-		fragments.add(new Tab3Fragment());
-		fragments.add(new Tab1Fragment());
-		fragments.add(new Tab2Fragment());
-		fragments.add(new Tab3Fragment());
+    /**
+     * This method is used to initialize the tabHost with labels and fake content to simulate.
+     */
+    private void initializeTabHost() {
 
-		this.myViewPagerAdapter = new MyFragmentPagerAdapter(
-				getChildFragmentManager(), fragments);
-		this.viewPager = (ViewPager) v.findViewById(R.id.viewPager);
-		this.viewPager.setAdapter(this.myViewPagerAdapter);
-		this.viewPager.setOnPageChangeListener(this);
+        tabHost = (TabHost) mView.findViewById(android.R.id.tabhost);
+        tabHost.setup();
 
-	}
+        String[] tabIemNames = {"Resumen", "Recogida de huevos", "Recarga de agua", "Recarga de pienso", "Limpieza del gallinero"};
+        for (int i = 0; i < tabIemNames.length; i++) {
+            TabHost.TabSpec tabSpec;
+            tabSpec = tabHost.newTabSpec("");
+            tabSpec.setIndicator(tabIemNames[i]);
+            tabSpec.setContent(new FakeContent(getActivity()));
+            tabHost.addTab(tabSpec);
+        }
 
-	private void initializeTabHost(Bundle args) {
+        tabHost.setOnTabChangedListener(this);
+    }
 
-		tabHost = (TabHost) v.findViewById(android.R.id.tabhost);
-		tabHost.setup();
+    @Override
+    public void onTabChanged(String tabId) {
+        int pos = this.tabHost.getCurrentTab();
+        mViewPager.setCurrentItem(pos);
 
-		for (int i = 1; i <= 6; i++) {
+        View tabView = tabHost.getCurrentTabView();
+        int scrollPos = tabView.getLeft()
+                - (hScrollView.getWidth() - tabView.getWidth()) / 2;
+        hScrollView.smoothScrollTo(scrollPos, 0);
 
-			TabHost.TabSpec tabSpec;
-			tabSpec = tabHost.newTabSpec("Tab " + i);
-			switch (i){
-				case 1:
-					tabSpec.setIndicator("RESUMEN");
-					break;
-				case 2:
-					tabSpec.setIndicator("Recogida de huevos");
-					break;
-				case 3:
-					tabSpec.setIndicator("Recarga de Agua");
-					break;
-				case 4:
-					tabSpec.setIndicator("Recarga de Pienso");
-					break;
-				case 5:
-					tabSpec.setIndicator("Limpieza Gallinero");
-					break;
-				case 6:
-					tabSpec.setIndicator("Caso 6");
-					break;
-			}
-			//tabSpec.setIndicator("TabULATION " + i);
-			tabSpec.setContent(new FakeContent(getActivity()));
-			tabHost.addTab(tabSpec);
-		}
 
-		tabHost.setOnTabChangedListener(this);
-	}
+    }
 
-	@Override
-	public void onTabChanged(String tabId) {
-		int pos = this.tabHost.getCurrentTab();
-		this.viewPager.setCurrentItem(pos);
+    @Override
+    public void onPageScrollStateChanged(int arg0) {
+    }
 
-		HorizontalScrollView hScrollView = (HorizontalScrollView) v
-				.findViewById(R.id.hScrollView);
-		View tabView = tabHost.getCurrentTabView();
-		int scrollPos = tabView.getLeft()
-				- (hScrollView.getWidth() - tabView.getWidth()) / 2;
-		hScrollView.smoothScrollTo(scrollPos, 0);
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        if (onResume) {
+            View tabView = tabHost.getTabWidget().getChildAt(position);
+            int width = hScrollView.getWidth();
+            int scrollPos = tabView.getLeft() - (width - tabView.getWidth()) / 2;
 
-	}
+            hScrollView.smoothScrollTo(scrollPos, 0);
+            onResume=!onResume;
+        }
+    }
 
-	@Override
-	public void onPageScrollStateChanged(int arg0) {
-	}
 
-	@Override
-	public void onPageScrolled(int arg0, float arg1, int arg2) {
-	}
+    @Override
+    public void onPageSelected(int position) {
+        this.tabHost.setCurrentTab(position);
+    }
 
-	@Override
-	public void onPageSelected(int position) {
-		this.tabHost.setCurrentTab(position);
-	}
+    @Override
+    public void onResume() {
+        super.onResume();
+        onResume=true;
+    }
 }

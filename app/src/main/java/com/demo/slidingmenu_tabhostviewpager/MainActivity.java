@@ -15,6 +15,7 @@ import android.widget.RelativeLayout;
 
 import com.demo.adapters.NavListAdapter;
 import com.demo.fragments.MisEntradas;
+import com.demo.fragments.MisInformes;
 import com.demo.fragments.MyAbout;
 import com.demo.fragments.MySettings;
 import com.demo.models.NavItem;
@@ -92,7 +93,7 @@ public class MainActivity extends ActionBarActivity {
 
 		listFragments = new ArrayList<Fragment>();
 		listFragments.add(new MisEntradas());
-		listFragments.add(new MisEntradas());
+		listFragments.add(new MisInformes());
 		listFragments.add(new MySettings());
 		listFragments.add(new MyAbout());
 

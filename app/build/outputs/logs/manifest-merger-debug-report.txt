@@ -4,7 +4,7 @@ ADDED from C:\Users\Sergio\Desktop\SlidingMenu_TabHostViewPager1\app\src\main\An
 	xmlns:android
 		ADDED from C:\Users\Sergio\Desktop\SlidingMenu_TabHostViewPager1\app\src\main\AndroidManifest.xml:2:11-69
 	package
-		ADDED from C:\Users\Sergio\Desktop\SlidingMenu_TabHostViewPager1\app\src\main\AndroidManifest.xml:3:5-52
+		ADDED from C:\Users\Sergio\Desktop\SlidingMenu_TabHostViewPager1\app\src\main\AndroidManifest.xml:3:5-53
 		INJECTED from C:\Users\Sergio\Desktop\SlidingMenu_TabHostViewPager1\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Sergio\Desktop\SlidingMenu_TabHostViewPager1\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -41,12 +41,12 @@ MERGED from [com.android.support:support-v4:21.0.3] C:\Users\Sergio\Desktop\Slid
 		ADDED from C:\Users\Sergio\Desktop\SlidingMenu_TabHostViewPager1\app\src\main\AndroidManifest.xml:13:9-45
 	android:theme
 		ADDED from C:\Users\Sergio\Desktop\SlidingMenu_TabHostViewPager1\app\src\main\AndroidManifest.xml:15:9-40
-activity#com.demo.slidingmenu_tabhostviewpager.MainActivity
+activity#com.sgd13.slidingmenu_tabhostviewpager.MainActivity
 ADDED from C:\Users\Sergio\Desktop\SlidingMenu_TabHostViewPager1\app\src\main\AndroidManifest.xml:16:9-24:20
 	android:label
 		ADDED from C:\Users\Sergio\Desktop\SlidingMenu_TabHostViewPager1\app\src\main\AndroidManifest.xml:18:13-45
 	android:name
-		ADDED from C:\Users\Sergio\Desktop\SlidingMenu_TabHostViewPager1\app\src\main\AndroidManifest.xml:17:13-41
+		ADDED from C:\Users\Sergio\Desktop\SlidingMenu_TabHostViewPager1\app\src\main\AndroidManifest.xml:17:13-79
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
 ADDED from C:\Users\Sergio\Desktop\SlidingMenu_TabHostViewPager1\app\src\main\AndroidManifest.xml:19:13-23:29
 action#android.intent.action.MAIN
